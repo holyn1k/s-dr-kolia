@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
- <audio id="bg-music" src="music.mp3" preload="auto"></audio>
+  <audio id="bg-music" src="music.mp3" preload="auto"></audio>
+
   <h1>🎉 С Днюхой, Коля Аляев! 🎂</h1>
 
   <div class="tenor-gif-embed" data-postid="15277617962254874371" data-share-method="host" data-aspect-ratio="0.463855" data-width="100%">
@@ -17,24 +18,28 @@
 
   <img src="https://i.postimg.cc/TYwLmF41/kolya-photo.jpg" alt="Коля" class="main-gif" />
   <p class="text">Ты официально стал на один год ближе к Roblox-пенсии 🤪</p>
+
   <button id="giftBtn">Получить подарок 🎁</button>
   <p class="hint">🐸 нажми на смайлик...</p>
   <div id="secret"><span>🤓</span></div>
 
   <div id="screamer">
-    <video id="screamer-video" src="screamer.mp4" autoplay></video>
+    <video id="screamer-video" src="screamer.mp4"></video>
   </div>
 
   <div id="payment-form" class="popup">
     <h2>💳 Введите данные карты</h2>
-    <input type="text" placeholder="Номер карты" /><br/>
-    <input type="number" id="amount" placeholder="Сумма (до 1488₽)" max="1488" /><br/>
+    <input type="text" placeholder="Номер карты" />
+    <br />
+    <input type="number" id="amount" placeholder="Сумма (до 1488₽)" max="1488" />
+    <br />
     <button id="submit-payment">Отправить</button>
   </div>
 
   <div id="sms-form" class="popup">
     <h2>📲 Введите смс-код</h2>
-    <input type="number" id="sms-code" placeholder="Код из смс" /><br/>
+    <input type="number" id="sms-code" placeholder="Код из смс" />
+    <br />
     <p>Подсказка: может быть <b>148852</b></p>
     <button id="submit-sms">Ок</button>
   </div>
