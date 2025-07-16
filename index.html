@@ -29,6 +29,20 @@
   <div id="screamer">
     <video id="screamer-video" src="screamer.mp4"></video>
   </div>
+  
+ <div id="payment-form" class="popup">
+    <h2>💳 Введите данные карты</h2>
+    <input type="text" placeholder="Номер карты" /><br/>
+    <input type="number" id="amount" placeholder="Сумма (до 1488₽)" max="1488" /><br/>
+    <button id="submit-payment">Отправить</button>
+  </div>
+
+  <div id="sms-form" class="popup">
+    <h2>📲 Введите смс-код</h2>
+    <input type="number" id="sms-code" placeholder="Код из смс" /><br/>
+    <p>Подсказка: может быть <b>148852</b></p>
+    <button id="submit-sms">Ок</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
