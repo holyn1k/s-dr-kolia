@@ -3,25 +3,32 @@ body {
   font-family: 'Comic Sans MS', sans-serif;
   text-align: center;
   padding: 40px;
+  margin: 0;
+  overflow-x: hidden;
 }
+
 h1 {
   font-size: 3em;
   color: #ff3399;
   animation: bounce 1s infinite;
 }
+
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
+
 .main-gif {
   width: 300px;
   margin: 20px;
 }
+
 .text {
   font-size: 1.5em;
   margin: 20px;
   color: #333;
 }
+
 button {
   padding: 15px 25px;
   font-size: 1.4em;
@@ -31,32 +38,40 @@ button {
   color: white;
   cursor: pointer;
   box-shadow: 0 0 10px #ff66cc;
+  position: relative;
+  transition: background-color 0.3s ease;
 }
+
 button:hover {
   background-color: #ff3399;
 }
+
 #secret span {
   font-size: 2em;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
+
 #secret span:hover {
   transform: scale(1.2);
 }
+
 #screamer {
   display: none;
   position: fixed;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100vw; height: 100vh;
   background: black;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 9999;
 }
+
 #screamer video {
   width: 100%;
   height: auto;
 }
+
 .popup {
   display: none;
   background: white;
@@ -66,7 +81,10 @@ button:hover {
   width: 300px;
   box-shadow: 0 0 10px #ff66cc;
   border-radius: 15px;
+  position: relative;
+  z-index: 10000;
 }
+
 .popup input {
   width: 90%;
   padding: 10px;
@@ -75,7 +93,57 @@ button:hover {
   border: 2px solid #ccc;
   border-radius: 10px;
 }
+
 .popup button {
   margin-top: 10px;
   background-color: #66ccff;
+  color: black;
+  font-weight: bold;
+}
+
+/* Взломан режим */
+
+body.hack-mode {
+  background: black !important;
+  overflow: hidden;
+  animation: bgFlash 0.2s infinite alternate;
+}
+
+@keyframes bgFlash {
+  0% { background-color: black; }
+  100% { background-color: #220000; }
+}
+
+.hack-mode .glitch-text {
+  font-size: 3em;
+  color: red;
+  font-family: 'Courier New', monospace;
+  text-shadow: 2px 0 red, -2px 0 cyan;
+  animation: glitch 0.3s infinite;
+  margin-top: 30vh;
+  text-align: center;
+}
+
+.hack-mode .glitch-sub {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #ff4444;
+  font-family: monospace;
+  animation: flicker 1s infinite alternate;
+  text-align: center;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(1px, 2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes flicker {
+  0% { opacity: 0.1; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
 }
