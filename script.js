@@ -1,11 +1,11 @@
 const bgMusic = document.getElementById('bg-music');
 const giftBtn = document.getElementById('giftBtn');
 
-// Включаем музыку при первом взаимодействии
+// Включаем музыку только после первого клика/тапа
 function enableMusic() {
   bgMusic.loop = true;
   bgMusic.play().catch(() => {
-    console.warn("Не удалось включить музыку автоматически.");
+    console.warn("Автоплей музыки заблокирован браузером");
   });
 
   document.removeEventListener('click', enableMusic);
@@ -107,7 +107,7 @@ function createRedWindows(count = 10) {
   }
 }
 
-// Убираем "мышку", делаем курсор трясущимся (имитация взлома)
+// Тряска мышки (замена курсора)
 function shakeCursor() {
   document.body.style.cursor = 'none';
 
@@ -122,7 +122,6 @@ function shakeCursor() {
   document.body.appendChild(fakeCursor);
 
   window.addEventListener('mousemove', (e) => {
-    // Добавляем случайное дрожание ±10px
     const shakeX = e.clientX + (Math.random() * 20 - 10);
     const shakeY = e.clientY + (Math.random() * 20 - 10);
     fakeCursor.style.left = shakeX + 'px';
@@ -143,7 +142,6 @@ document.getElementById('submit-sms').addEventListener('click', () => {
     document.getElementById('amount').max = 999999;
     alert("💰 Хакерский режим включён. Введите любую сумму.");
   } else if (code === sum) {
-    // Взлом!
     document.body.classList.add('hack-mode');
     document.body.innerHTML = `
       <div class="glitch-text">ВАС ВЗЛОМАЛИ</div>
