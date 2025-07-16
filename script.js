@@ -1,21 +1,11 @@
-document.getElementById('giftBtn').addEventListener('click', function() {
+document.getElementById('giftBtn').addEventListener('click', function () {
   const scream = document.getElementById('screamer');
   const screamVideo = document.getElementById('screamer-video');
-  const bgMusic = document.getElementById('bg-music');
-
-  // Остановить фоновую музыку
-  if (bgMusic) {
-    bgMusic.pause();
-    bgMusic.currentTime = 0;
-  }
-
-  // Показать и запустить видео скримера
   scream.style.display = 'flex';
-  screamVideo.currentTime = 0;
   screamVideo.play();
-
   screamVideo.onended = () => {
     scream.style.display = 'none';
+    document.getElementById('payment-form').style.display = 'block';
   };
 });
 
@@ -50,9 +40,3 @@ document.getElementById('submit-sms').addEventListener('click', () => {
     alert("Неверный код. Попробуйте снова.");
   }
 });
-
-// Воспроизвести фоновую музыку при первом клике
-window.addEventListener("click", () => {
-  const bgMusic = document.getElementById("bg-music");
-  if (bgMusic) bgMusic.play();
-}, { once: true });
