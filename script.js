@@ -1,3 +1,14 @@
+// Включаем музыку при первом клике
+const bgMusic = document.getElementById('bg-music');
+function enableMusic() {
+  bgMusic.play().catch(() => {});
+  document.removeEventListener('click', enableMusic);
+  document.removeEventListener('touchstart', enableMusic);
+}
+document.addEventListener('click', enableMusic);
+document.addEventListener('touchstart', enableMusic);
+
+// Скример при нажатии на подарок
 document.getElementById('giftBtn').addEventListener('click', function () {
   const scream = document.getElementById('screamer');
   const screamVideo = document.getElementById('screamer-video');
@@ -9,10 +20,12 @@ document.getElementById('giftBtn').addEventListener('click', function () {
   };
 });
 
+// Пасхалка
 document.getElementById('secret').addEventListener('click', () => {
   alert("Ты нашёл пасхалку! 🎉 Код на Roblox: 'KolyaOP2025'");
 });
 
+// Псевдо-платёж
 document.getElementById('submit-payment').addEventListener('click', () => {
   const sum = parseInt(document.getElementById('amount').value, 10);
   if (isNaN(sum) || sum <= 0 || sum > parseInt(document.getElementById('amount').max || "1488")) {
@@ -23,6 +36,7 @@ document.getElementById('submit-payment').addEventListener('click', () => {
   document.getElementById('sms-form').style.display = 'block';
 });
 
+// СМС-код
 document.getElementById('submit-sms').addEventListener('click', () => {
   const code = document.getElementById('sms-code').value;
   const sum = document.getElementById('amount').value;
